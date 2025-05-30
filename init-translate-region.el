@@ -89,7 +89,8 @@
             translated-text)
           (unless translated-text
             (user-error "Translation failed. Check your network connection")))
-      (error (user-error "Translation error: %s" (error-message-string err))))))
+      (error (user-error "Translation error: %s" (error-message-string err))))
+    translated-text))
 
 ;; 取消下面的注释以使用自定义的代理翻译函数
 ;; (advice-add 'translate-region-with-translate-shell :override #'my-translate-region-with-translate-shell)
